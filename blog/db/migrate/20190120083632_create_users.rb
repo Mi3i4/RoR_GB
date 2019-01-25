@@ -4,7 +4,7 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :name
       t.string :email
       t.boolean :moderator, default: false
-      t.boolean :creater, default: false
+      t.boolean :creator, default: false
       t.boolean :banned, default: false
 
       t.timestamps
