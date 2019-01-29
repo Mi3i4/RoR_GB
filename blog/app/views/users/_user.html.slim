@@ -1,0 +1,8 @@
+- @users.each do |user|
+div.user_crutch
+  div.card style = "width: 18rem"
+    img src="..." class="card-img-top" alt="user_photo"
+    div.card-body
+      h5.card-title = user.name
+      h5.card-title = user.email
+      button.btn= link_to 'Show', user

@@ -1,0 +1,15 @@
+h1 Users
+div.user_new
+  div.btn-group
+    button.type.button.class.btn = link_to 'New User', new_user_path
+
+div.user_pag
+  = paginate @users, theme: 'twitter-bootstrap-4'
+
+div.user_cards
+  = render partial: 'user', collection: @users
+
+
+
+
+
