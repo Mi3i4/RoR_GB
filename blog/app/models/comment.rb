@@ -3,6 +3,6 @@ class Comment < ApplicationRecord
   belongs_to :commentable, polymorphic: true
   # belongs_to :post
 
-  validates :body, :user, presence: true
-  validates :body, length: { minimum: 3, maximum: 1200 }
+  # validates :body, :user, presence: true
+  # validates :body, length: { minimum: 3, maximum: 1200 }
 end

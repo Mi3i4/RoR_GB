@@ -1,0 +1,9 @@
+h4.user = post.user.name
+h6 = post.user.created_at
+h5 = post.title
+p = post.body
+div.btn-group.post
+  button.type.button.class.btn = link_to 'Show', post
+  button.type.button.class.btn = link_to 'Edit', edit_post_path(post)
+  button.type.button.class.btn = link_to 'Destroy', post, data: {confirm: 'Are you sure?'}, method: :delete
+hr.featurette-divider

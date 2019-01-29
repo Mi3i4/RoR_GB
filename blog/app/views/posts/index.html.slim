@@ -1,0 +1,16 @@
+h1 Posts
+
+hr.featurette-divider
+div.new_post
+  div.btn-group
+    button.type.button.class.btn = link_to 'New Post', new_post_path
+
+div.new_post
+  = paginate @posts,  theme: 'twitter-bootstrap-4'
+
+hr.featurette-divider
+
+  = render partial: 'post', collection: @posts
+
+
+

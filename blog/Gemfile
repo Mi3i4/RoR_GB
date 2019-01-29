@@ -52,3 +52,7 @@ gem 'slim-rails'
 gem 'pg', '~> 1.0'
 
 gem 'ffaker'
+
+gem 'kaminari'
+
+gem 'bootstrap4-kaminari-views'

@@ -25,7 +25,7 @@ creators = User.where(creator: true)
 
 hash_posts = 30.times.map do
   {
-      title: FFaker::HipsterIpsum.paragraph,
+      title: FFaker::Book.title,
       body: FFaker::HipsterIpsum.paragraphs,
       user: creators.sample
   }

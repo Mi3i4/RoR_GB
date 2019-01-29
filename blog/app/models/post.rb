@@ -4,7 +4,9 @@ class Post < ApplicationRecord
   # has_many :comments
   has_many :commentators, through: :comments, source: :user
 
-  validates :title, :body, :user, presence: true
-  validates :title, length: { minimum: 3, maximum: 1254 }
-  validates :body, length: { minimum: 3, maximum: 1500 }
+  # validates :title, :body, :user, presence: true
+  # validates :title, length: { minimum: 3, maximum: 1254 }
+  # validates :body, length: { minimum: 3, maximum: 1500 }
+
+  scope :written_by_moderators, -> { joins(:user).where(users: { moderator: true })}
 end
