@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_actioln :set_seo, only: [:show]
+  # before_action :authenticate_user!
 
   # GET /posts
   # GET /posts.json
@@ -10,6 +12,7 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+    @posts_comments = @post.comments.order(:created_at).page(params[:page]).per(3)
   end
 
   # GET /posts/new
@@ -71,4 +74,12 @@ class PostsController < ApplicationController
     def post_params
       params.require(:post).permit(:title, :body, :user_id, :disactive)
     end
+
+  def set_seo
+    if @post.seo
+    @title = @post.seo.title
+    @description = @post.seo.body
+    @robots = @post.seo.robots
+    end
+  end
 end
