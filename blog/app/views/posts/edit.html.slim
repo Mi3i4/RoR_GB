@@ -1,8 +1,22 @@
 h1 Editing post
 
-== render 'form'
+/ == render 'form'
+/
+/ => link_to 'Show', @post
+/ '|
+/ =< link_to 'Back', posts_path
 
-=> link_to 'Show', @post
-'|
-=< link_to 'Back', posts_path
+form
+#update
+  div.form-group
+    label.user Title
+    input.form-control.type.text value = @post.title
+    label.user Body
+    textarea.form-control.type.text rows="7" = @post.body
+    hr.featurette-divider
+  div.btn-group.post
+    / button.type.button.class.btn = link_to 'Show', @post
+    / button.type.button.class.btn = link_to 'Back', posts_path
+    / button.class.btn type="submit" form="update" Save
+    button.class.btn type="submit" form="update" = link_to 'Save', posts_path, method: :post
 

@@ -12,9 +12,12 @@ Comment.destroy_all
 
 
 hash_users = 10.times.map do
+  email = FFaker::Internet.safe_email
   {
       name: FFaker::Internet.user_name,
-      email: FFaker::Internet.safe_email
+      email: email,
+      password: email
+      # password: FFaker::Internet.password
   }
 end
 
@@ -26,7 +29,7 @@ creators = User.where(creator: true)
 hash_posts = 30.times.map do
   {
       title: FFaker::Book.title,
-      body: FFaker::HipsterIpsum.paragraphs,
+      body: FFaker::HipsterIpsum.paragraph*3,
       user: creators.sample
   }
 end

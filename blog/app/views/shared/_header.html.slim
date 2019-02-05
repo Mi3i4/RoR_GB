@@ -1,0 +1,12 @@
+header
+ul.nav.justify-content-center
+- if user_signed_in?
+  li.nav-item
+    span 'Hello', #{ current_user.name }
+  li.nav-item
+    = link_to ':Log out', destroy_user_session_path, method: :delete
+  li.nav-item
+    = link_to 'Log in', new_user_session_path
+  li.nav-item
+    = link_to 'Register', new_user_registration_path
+
